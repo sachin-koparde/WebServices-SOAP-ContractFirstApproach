@@ -1,6 +1,6 @@
 <xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema"
-           xmlns:tns = "http://soapcontractfirstapproach.onsoap.assignment/employee"
-           targetNamespace = "http://soapcontractfirstapproach.onsoap.assignment/employee"
+           xmlns:tns = "http://soapcfa.onsoap.assignment/employee"
+           targetNamespace = "http://soapcfa.onsoap.assignment/employee"
            elementFormDefault="qualified">
 
     <xs:complexType name="employeeType">

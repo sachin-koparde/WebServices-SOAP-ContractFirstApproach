@@ -1,4 +1,4 @@
-package assignment.onsoap.soapContractFirstApproach.model;
+package assignment.onsoap.soapcfa.model;
 
 public class Employee {
 

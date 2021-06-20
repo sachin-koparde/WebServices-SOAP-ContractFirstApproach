@@ -1,7 +1,6 @@
-package assignment.onsoap.soapContractFirstApproach.config;
+package assignment.onsoap.soapcfa.config;
 
 import org.apache.cxf.Bus;
-import org.apache.cxf.jaxws.EndpointImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
@@ -13,8 +12,6 @@ import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
 import org.springframework.xml.xsd.SimpleXsdSchema;
 import org.springframework.xml.xsd.XsdSchema;
-
-import javax.xml.ws.Endpoint;
 
 @EnableWs
 @Configuration
@@ -35,7 +32,7 @@ public class WebServiceConfig {
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema employeeSchema) {
         DefaultWsdl11Definition definition = new DefaultWsdl11Definition();
         definition.setPortTypeName("EmployeePort");
-        definition.setTargetNamespace("http://soapcontractfirstapproach.onsoap.assignment/employee");
+        definition.setTargetNamespace("http://soapcfa.onsoap.assignment/employee");
         definition.setLocationUri("/ws");
         definition.setSchema(employeeSchema);
         return definition;
