@@ -2,9 +2,27 @@ package assignment.onsoap.soapcfa;
 
 
 import assignment.onsoap.soapcfa.employee.*;
+import assignment.onsoap.soapcfa.model.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmployeeWsImpl implements EmployeePort {
 
+
+    public EmployeeWsImpl() {
+        init();
+    }
+
+    private void init() {
+        List<Employee> employees = new ArrayList<Employee>();
+
+        Employee employee = new Employee();
+        employee.setEmployeeId(12100L);
+        employee.setEmployeeName("Dinesh");
+
+        employees.add(employee);
+    }
 
     @Override
     public GetAllEmployeeResponse getAllEmployee(GetAllEmployeeRequest getAllEmployeeRequest) {

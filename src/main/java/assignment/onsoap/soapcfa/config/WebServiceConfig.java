@@ -1,6 +1,7 @@
 package assignment.onsoap.soapcfa.config;
 
 import org.apache.cxf.Bus;
+import org.apache.cxf.jaxws.EndpointImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
@@ -12,6 +13,8 @@ import org.springframework.ws.transport.http.MessageDispatcherServlet;
 import org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
 import org.springframework.xml.xsd.SimpleXsdSchema;
 import org.springframework.xml.xsd.XsdSchema;
+
+import javax.xml.ws.Endpoint;
 
 @EnableWs
 @Configuration
@@ -43,10 +46,11 @@ public class WebServiceConfig {
         return new SimpleXsdSchema(new ClassPathResource("employee.xsd"));
     }
 
-//    @Bean
-//    public Endpoint endpoint() {
-//        EndpointImpl endpoint = new EndpointImpl(bus, new)
-//    }
+    @Bean
+    public Endpoint endpoint() {
+        EndpointImpl endpoint = new EndpointImpl(bus, new WebServiceConfig());
+
+    }
 
 
 }
