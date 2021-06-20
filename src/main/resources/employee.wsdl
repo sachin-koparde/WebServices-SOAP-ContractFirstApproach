@@ -1,6 +1,6 @@
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://soapContractFirstApproach.onsoap.assignment/employee" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soapContractFirstApproach.onsoap.assignment/employee" targetNamespace="http://soapContractFirstApproach.onsoap.assignment/employee">
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://soapcfa.onsoap.assignment/employee" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soapcfa.onsoap.assignment/employee" targetNamespace="http://soapcfa.onsoap.assignment/employee">
     <wsdl:types>
-        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://soapContractFirstApproach.onsoap.assignment/employee">
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://soapcfa.onsoap.assignment/employee">
             <xs:complexType name="employeeType">
                 <xs:sequence>
                     <xs:element name="employeeId" type="xs:long"/>
@@ -85,9 +85,6 @@
     <wsdl:message name="deleteEmployeeRequest">
         <wsdl:part element="tns:deleteEmployeeRequest" name="deleteEmployeeRequest"> </wsdl:part>
     </wsdl:message>
-    <wsdl:message name="deleteEmployeeResponse">
-        <wsdl:part element="tns:deleteEmployeeResponse" name="deleteEmployeeResponse"> </wsdl:part>
-    </wsdl:message>
     <wsdl:message name="getEmployeeByIdResponse">
         <wsdl:part element="tns:getEmployeeByIdResponse" name="getEmployeeByIdResponse"> </wsdl:part>
     </wsdl:message>
@@ -96,6 +93,9 @@
     </wsdl:message>
     <wsdl:message name="addEmployeeRequest">
         <wsdl:part element="tns:addEmployeeRequest" name="addEmployeeRequest"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteEmployeeResponse">
+        <wsdl:part element="tns:deleteEmployeeResponse" name="deleteEmployeeResponse"> </wsdl:part>
     </wsdl:message>
     <wsdl:message name="addEmployeeResponse">
         <wsdl:part element="tns:addEmployeeResponse" name="addEmployeeResponse"> </wsdl:part>
