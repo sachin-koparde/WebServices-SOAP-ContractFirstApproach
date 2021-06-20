@@ -1,5 +1,6 @@
 package assignment.onsoap.soapcfa.config;
 
+import assignment.onsoap.soapcfa.EmployeeWsImpl;
 import org.apache.cxf.Bus;
 import org.apache.cxf.jaxws.EndpointImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,8 +49,9 @@ public class WebServiceConfig {
 
     @Bean
     public Endpoint endpoint() {
-        EndpointImpl endpoint = new EndpointImpl(bus, new WebServiceConfig());
-
+        EndpointImpl endpoint = new EndpointImpl(bus, new EmployeeWsImpl());
+        endpoint.publish("/employeeservice");
+        return endpoint;
     }
 
 

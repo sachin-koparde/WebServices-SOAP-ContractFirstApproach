@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &amp;lt;complexContent&amp;gt;
  *     &amp;lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&amp;gt;
  *       &amp;lt;sequence&amp;gt;
- *         &amp;lt;element name="employeeId" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
+ *         &amp;lt;element name="employeeId" type="{http://www.w3.org/2001/XMLSchema}long"/&amp;gt;
  *         &amp;lt;element name="employeeName" type="{http://www.w3.org/2001/XMLSchema}string"/&amp;gt;
  *       &amp;lt;/sequence&amp;gt;
  *     &amp;lt;/restriction&amp;gt;
@@ -36,32 +36,23 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "addEmployeeRequest")
 public class AddEmployeeRequest {
 
-    @XmlElement(required = true)
-    protected String employeeId;
+    protected long employeeId;
     @XmlElement(required = true)
     protected String employeeName;
 
     /**
      * Gets the value of the employeeId property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getEmployeeId() {
+    public long getEmployeeId() {
         return employeeId;
     }
 
     /**
      * Sets the value of the employeeId property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setEmployeeId(String value) {
+    public void setEmployeeId(long value) {
         this.employeeId = value;
     }
 
