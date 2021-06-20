@@ -1,0 +1,93 @@
+<xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema"
+           xmlns:tns = "http://soapcontractfirstapproach.onsoap.assignment/employee"
+           targetNamespace = "http://soapcontractfirstapproach.onsoap.assignment/employee"
+           elementFormDefault="qualified">
+
+    <xs:complexType name="employeeType">
+        <xs:sequence>
+            <xs:element name="employeeId" type="xs:long"/>
+            <xs:element name="employeeName" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="addEmployeeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employeeId" type="xs:string"/>
+                <xs:element name="employeeName" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addEmployeeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+                <xs:element name="employeeType" type="tns:employeeType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="getEmployeeByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employeeId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getEmployeeByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employeeType" type="tns:employeeType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateEmployeeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employeeId" type="xs:long"/>
+                <xs:element name="employeeName" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="updateEmployeeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+                <xs:element name="employee" type="tns:employeeType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAllEmployeeRequest">
+        <xs:complexType/>
+    </xs:element>
+
+    <xs:element name="getAllEmployeeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employeeType" type="tns:employeeType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteEmployeeRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="employeeId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteEmployeeResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
